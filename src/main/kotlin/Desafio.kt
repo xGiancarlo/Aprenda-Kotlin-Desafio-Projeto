@@ -49,23 +49,33 @@ fun main() {
     val conteudo1 = ConteudoEducacional("Introdução à Programação", "Fundamentos de programação")
     val conteudo2 = ConteudoEducacional("Desenvolvimento Web", "Construção de sites e aplicativos web")
     val conteudo3 = ConteudoEducacional("Banco de Dados", "Gerenciamento de dados")
+    val conteudo4 = ConteudoEducacional("Desenvolvimento Mobile", "Desenvolvimento de aplicativos móveis")
+    val conteudo5 = ConteudoEducacional("Desenvolvimento de APIs", "Desenvolvimento de APIs REST e SOAP")
 
     // Criando algumas Formacoes
     val formacao1 = Formacao("Desenvolvedor Web", Nivel.BASICO, listOf(conteudo1, conteudo2))
     val formacao2 = Formacao("Analista de Dados", Nivel.DIFICIL, listOf(conteudo1, conteudo3))
+    val formacao3 = Formacao("Desenvolvedor Mobile", Nivel.INTERMEDIARIO, listOf(conteudo1, conteudo4))
+    val formacao4 = Formacao("Desenvolvedor de APIs", Nivel.DIFICIL, listOf(conteudo1, conteudo5))
 
     // Adicionando as formações à DIO
     dio.adicionarFormacao(formacao1)
     dio.adicionarFormacao(formacao2)
+    dio.adicionarFormacao(formacao3)
+    dio.adicionarFormacao(formacao4)
 
     // Criando alguns alunos
-    val aluno1 = Aluno("João")
-    val aluno2 = Aluno("Maria")
+    val aluno1 = Aluno("Giancarlo")
+    val aluno2 = Aluno("Yanna")
+    val aluno3 = Aluno("Rodrigo")
+    val aluno4 = Aluno("Leticia")
 
     // Matriculando alunos em formações
     dio.matricularAluno(aluno1, formacao1)
     dio.matricularAluno(aluno2, formacao1)
     dio.matricularAluno(aluno1, formacao2)
+    dio.matricularAluno(aluno3, formacao4)
+    dio.matricularAluno(aluno4, formacao3)
 
     // Listando formações disponíveis
     dio.listarFormacoesDisponiveis()
